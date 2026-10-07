@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculadora de Frete</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section class="card">
+
+            <div class="logo">
+                📦
+            </div>
+
+            <h1>Calculadora de Frete</h1>
+
+            <p class="subtitle">
+                Informe o CEP para calcular a distância e o valor estimado da entrega.
+            </p>
+
+            <div class="origem">
+                <span>📍 Origem</span>
+                <strong>UNINASSAU - Parangaba</strong>
+                <small>
+                    Rua Germano Franck, 613 - Parangaba, Fortaleza - CE
+                </small>
+            </div>
+
+            <form id="freteForm">
+
+                <label for="cep">
+                    CEP de destino
+                </label>
+
+                <div class="cep-area">
+
+                    <input
+                        type="text"
+                        id="cep"
+                        placeholder="Ex.: 60740-020"
+                        maxlength="9"
+                        required
+                    >
+
+                    <button type="button" id="buscarCep">
+                        Buscar
+                    </button>
+
+                </div>
+
+                <div id="loading" class="loading hidden">
+                    Consultando endereço...
+                </div>
+
+                <div id="endereco" class="endereco hidden">
+
+                    <p>
+                        <strong>Endereço:</strong>
+                        <span id="logradouro"></span>
+                    </p>
+
+                    <p>
+                        <strong>Bairro:</strong>
+                        <span id="bairro"></span>
+                    </p>
+
+                    <p>
+                        <strong>Cidade:</strong>
+                        <span id="cidade"></span>
+                    </p>
+
+                    <p>
+                        <strong>Estado:</strong>
+                        <span id="uf"></span>
+                    </p>
+
+                </div>
+
+                <button type="submit" class="calcular">
+                    Calcular Frete 🚚
+                </button>
+
+            </form>
+
+            <div id="resultado" class="resultado hidden">
+
+                <h2>Resultado da entrega</h2>
+
+                <div class="resultado-item">
+                    <span>📍 Distância</span>
+                    <strong id="distancia">--</strong>
+                </div>
+
+                <div class="resultado-item">
+                    <span>🛵 Uber Moto estimado</span>
+                    <strong id="uber">--</strong>
+                </div>
+
+                <div class="resultado-item">
+                    <span>📦 Frete calculado</span>
+                    <strong id="frete">--</strong>
+                </div>
+
+                <div class="total">
+                    <span>Valor da entrega</span>
+                    <strong id="total">--</strong>
+                </div>
+
+                <p class="observacao">
+                    * O valor do Uber Moto é apenas uma estimativa.
+                    O preço real pode variar conforme horário, demanda,
+                    trânsito e disponibilidade.
+                </p>
+
+            </div>
+
+            <div id="erro" class="erro hidden"></div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
